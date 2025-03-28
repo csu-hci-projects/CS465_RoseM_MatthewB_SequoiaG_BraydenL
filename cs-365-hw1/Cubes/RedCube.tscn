@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://crbg2b2gsvgnr"]
+
+[ext_resource type="Script" uid="uid://dt6j7ao34bi88" path="res://Cubes/red_cube.gd" id="1_nn3fl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fv7ek"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nn3fl"]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="RedCube" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_fv7ek")
+surface_material_override/0 = SubResource("StandardMaterial3D_nn3fl")
+script = ExtResource("1_nn3fl")
