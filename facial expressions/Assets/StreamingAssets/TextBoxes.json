@@ -1,0 +1,24 @@
+{
+    "textList": [
+        {
+            "id": 0,
+            "text": "Hello! In this experiment you will be asked to build a LEGO figure from a virtual model in AR."
+        },
+        {
+            "id": 1,
+            "text": "There will be 2 distinct ways for you to view the model, and you will be asked to do 2 tasks each."
+        },
+        {
+            "id": 2,
+            "text": "One input method is going to use a hands-free mixture of facial expressions and head movement."
+        },
+        {
+            "id": 3,
+            "text": "In the other method you can turn the model by using your hands and grabbing the model."
+        },
+        {
+            "id": 4,
+            "text": "Buddy"
+        }
+    ]
+}
