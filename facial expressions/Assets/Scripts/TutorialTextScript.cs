@@ -5,17 +5,24 @@ using SimpleJSON;
 using System.IO;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TutorialTextScript : MonoBehaviour
 {
 
     // Exposed Variables
     [SerializeField] public OVRFaceExpressions FacialExpressions; // ref to face tracking component
-    [SerializeField] public OVRFaceExpressions.FaceExpression EyebrowRaise; // enums for Spin Left/Right 
-    [SerializeField][Range(0, 1.0f)] public float Weight = 0.5f; // weight value for comparing face expressions
+    [SerializeField] public OVRFaceExpressions.FaceExpression EyebrowLower;
+    [SerializeField] public OVRFaceExpressions.FaceExpression EyebrowRaise;
+    [SerializeField][Range(0, 1.0f)] public float Weight = 0.25f; // weight value for comparing face expressions
+    [SerializeField] public GameObject buttonPlane;
+    [SerializeField] public Button buttonContinue;
+
     public TMP_Text changingText;
 
     public bool hasRaisedEyebrows = false;
+    public bool hasLoweredEyebrows = false;
     public int changedTextCount = 0;
 
     private TextStore textStore;
@@ -42,9 +49,17 @@ public class TutorialTextScript : MonoBehaviour
         return JsonUtility.FromJson<TextStore>(textData);
     }
 
+    private void ContinueOnClick()
+    {
+        SceneManager.LoadScene("Face Scene");
+    }
+
 
     void Start()
     {
+        buttonPlane.SetActive(false);
+        buttonContinue.onClick.AddListener(ContinueOnClick);
+
         if (FacialExpressions == null) throw new Exception("No Refrence To Face Tracking Component");
         if (!FacialExpressions.isActiveAndEnabled) Debug.Log("Facial Expressions not Enabled");
 
@@ -61,12 +76,6 @@ public class TutorialTextScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            hasRaisedEyebrows = true;
-            changedTextCount++;
-            changingText.text = textTable[changedTextCount].ToString();
-        }
         if (FacialExpressions.isActiveAndEnabled) // check if face tracking is enabled
         {
             if (FacialExpressions.GetWeight(EyebrowRaise) >= Weight) // check turn left
@@ -74,7 +83,7 @@ public class TutorialTextScript : MonoBehaviour
                 if (!hasRaisedEyebrows)
                 {
                     hasRaisedEyebrows = true;
-                    changedTextCount++;
+                    if (changedTextCount < textStore.textList.Count) { changedTextCount++; }
                     changingText.text = textTable[changedTextCount].ToString();
                 }
             }
@@ -82,7 +91,24 @@ public class TutorialTextScript : MonoBehaviour
             {
                 hasRaisedEyebrows = false;
             }
+
+            if (FacialExpressions.GetWeight(EyebrowLower) >= Weight) // check turn left
+            {
+                if (!hasLoweredEyebrows)
+                {
+                    hasLoweredEyebrows = true;
+                    if (changedTextCount > 0) { changedTextCount--; }
+                    changingText.text = textTable[changedTextCount].ToString();
+                }
+            }
+            else
+            {
+                hasLoweredEyebrows = false;
+            }
         }
+
+        if (changedTextCount > textStore.textList.Count - 1) { buttonPlane.SetActive(true); }
+        if (changedTextCount <= textStore.textList.Count - 1) { buttonPlane.SetActive(false); }
 
     }
 }

@@ -21,6 +21,8 @@ public class FaceTracking : MonoBehaviour
     {
         if (FacialExpressions.isActiveAndEnabled) // check if face tracking is enabled
         {
+            Debug.Log("SpinRight"+FacialExpressions.GetWeight(SpinRight));
+            Debug.Log("SpinLeft"+ FacialExpressions.GetWeight(SpinLeft));
             if (FacialExpressions.GetWeight(SpinLeft) >= Weight) // check turn left
             {
                 Vector3 target = new Vector3(0f, 0.5f, 0);
