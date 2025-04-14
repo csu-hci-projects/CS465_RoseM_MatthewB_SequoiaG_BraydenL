@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Oculus.Interaction.Surfaces;
+using Oculus.Interaction;
+
 
 public class TutorialTextScript : MonoBehaviour
 {
@@ -17,7 +20,7 @@ public class TutorialTextScript : MonoBehaviour
     [SerializeField] public OVRFaceExpressions.FaceExpression EyebrowRaise;
     [SerializeField][Range(0, 1.0f)] public float Weight = 0.25f; // weight value for comparing face expressions
     [SerializeField] public GameObject buttonPlane;
-    [SerializeField] public Button buttonContinue;
+    [SerializeField] public PokeInteractable buttonContinue;
 
     public TMP_Text changingText;
 
@@ -49,16 +52,10 @@ public class TutorialTextScript : MonoBehaviour
         return JsonUtility.FromJson<TextStore>(textData);
     }
 
-    private void ContinueOnClick()
-    {
-        SceneManager.LoadScene("Face Scene");
-    }
-
 
     void Start()
     {
         buttonPlane.SetActive(false);
-        buttonContinue.onClick.AddListener(ContinueOnClick);
 
         if (FacialExpressions == null) throw new Exception("No Refrence To Face Tracking Component");
         if (!FacialExpressions.isActiveAndEnabled) Debug.Log("Facial Expressions not Enabled");
@@ -71,7 +68,6 @@ public class TutorialTextScript : MonoBehaviour
         }
 
         changingText.text = textTable[0].ToString();
-        Debug.Log(changingText.text);
     }
 
     void Update()
@@ -105,6 +101,12 @@ public class TutorialTextScript : MonoBehaviour
             {
                 hasLoweredEyebrows = false;
             }
+        }
+
+        if (buttonContinue.State == InteractableState.Select)
+        {
+            Debug.Log("SHOULD LOAD");
+            SceneManager.LoadScene("Face Scene");
         }
 
         if (changedTextCount > textStore.textList.Count - 1) { buttonPlane.SetActive(true); }
