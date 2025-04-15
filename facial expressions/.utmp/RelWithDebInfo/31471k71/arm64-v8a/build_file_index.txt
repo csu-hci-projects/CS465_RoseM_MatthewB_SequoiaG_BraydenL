@@ -1,0 +1,2 @@
+C:\Users\Maximilian Rose\Documents\465projagain\CS465_RoseM_MatthewB_SequoiaG_BraydenL\facial expressions\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\Maximilian Rose\Documents\465projagain\CS465_RoseM_MatthewB_SequoiaG_BraydenL\facial expressions\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
