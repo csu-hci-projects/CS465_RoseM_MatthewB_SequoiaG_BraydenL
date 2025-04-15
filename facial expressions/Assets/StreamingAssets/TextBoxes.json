@@ -2,7 +2,7 @@
     "textList": [
         {
             "id": 0,
-            "text": "Hello! In this experiment you will be asked to build a LEGO figure from a virtual model in AR."
+            "text": "Hello! In this experiment you will be asked to build a LEGO figure based on a virtual model in AR."
         },
         {
             "id": 1,
@@ -18,7 +18,19 @@
         },
         {
             "id": 4,
-            "text": "Buddy"
+            "text": "You can try out input methods before the task starts!"
+        },
+        {
+            "id": 5,
+            "text": "Input Method 1 (Hands-free): Move your head while raising your eyebrows to move the model."
+        },
+        {
+            "id": 6,
+            "text": "Input Method 2: Move the model by grabbing it with your hands."
+        },
+        {
+            "id": 7,
+            "text": "Push the white button to the right with your hand to try out moving the model!"
         }
     ]
 }

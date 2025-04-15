@@ -1,13 +1,9 @@
 using System;
 using TMPro;
 using UnityEngine;
-using SimpleJSON;
-using System.IO;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using Oculus.Interaction.Surfaces;
 using Oculus.Interaction;
 
 
@@ -109,8 +105,8 @@ public class TutorialTextScript : MonoBehaviour
             SceneManager.LoadScene("Face Scene");
         }
 
-        if (changedTextCount > textStore.textList.Count - 1) { buttonPlane.SetActive(true); }
-        if (changedTextCount <= textStore.textList.Count - 1) { buttonPlane.SetActive(false); }
+        if (changedTextCount == textStore.textList.Count) { buttonPlane.SetActive(true); }
+        if (changedTextCount < textStore.textList.Count) { buttonPlane.SetActive(false); }
 
     }
 }
