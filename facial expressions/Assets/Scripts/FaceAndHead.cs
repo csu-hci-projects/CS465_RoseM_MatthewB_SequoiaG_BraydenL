@@ -8,8 +8,9 @@ public class FaceAndHead : MonoBehaviour
     [SerializeField] public GameObject _Camera;
     [SerializeField] public GameObject _DrawPoint;
     [SerializeField] public OVRFaceExpressions.FaceExpression _RotateExpression;
-    [SerializeField][Range(0f, 1f)] public float _Weight = 0.8f;
-    private Vector3 _Orgin;
+    [SerializeField][Range(0f, 1f)] public float _Weight = 0.3f;
+    [SerializeField][Range(0.1f, 2f)] public float _Speed = 1f;
+    private Quaternion _Orgin;
     private bool _Rotating = false;
     private Vector3 _DrawPosition;
 
@@ -26,20 +27,21 @@ public class FaceAndHead : MonoBehaviour
     {
         if (_FaceTrackingComponent.isActiveAndEnabled) 
         {
-            Debug.Log("Tracking Enabled:");
             if (_FaceTrackingComponent.GetWeight(_RotateExpression) >= _Weight) 
             {
                 if (!_Rotating) 
                 {
-                    _Orgin = _Camera.transform.rotation.eulerAngles;
-                    _DrawPosition = _DrawPoint.transform.position;
+
+                    _Orgin = _Camera.transform.rotation;
                     _Rotating = true;
                 }
-                Vector3 rotate = (_Orgin - (_Camera.transform.rotation.eulerAngles)) * .1f;
-                _CakeModel.transform.Rotate(rotate.x, rotate.y, 0, Space.World);
-                Gizmos.DrawLine(_DrawPosition, _DrawPoint.transform.position);
+                //Debug.Log("Origin:" + _Orgin + "\nCamera:" + _Camera.transform.localEulerAngles + "\nRotate:" + Vector3.ClampMagnitude((_Orgin - (_Camera.transform.localEulerAngles)) * _Speed, _ClampValue));
+
+                Quaternion rotate = _Orgin * Quaternion.Inverse(_Camera.transform.rotation); //Vector3.ClampMagnitude((_Orgin - (_Camera.transform.localEulerAngles)) * _Speed, _ClampValue);
+                _CakeModel.transform.Rotate(rotate.eulerAngles.x * _Speed, rotate.eulerAngles.y * _Speed, 0, Space.World);
             }
             else _Rotating = false;
         }
     }
+
 }
