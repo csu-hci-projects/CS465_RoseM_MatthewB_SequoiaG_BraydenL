@@ -443,7 +443,6 @@ MonoBehaviour:
   _RotateExpression: 3
   _Weight: 0.35
   _Speed: 5
-  _ClampValue: 0.1
 --- !u!114 &265048957
 MonoBehaviour:
   m_ObjectHideFlags: 0
