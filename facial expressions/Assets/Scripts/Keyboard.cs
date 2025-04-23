@@ -6,7 +6,7 @@ public class Keyboard : MonoBehaviour
 {
     public KeyboardInput playerInput;
     private InputAction rotate;
-    private InputAction nextScene;
+    private InputAction resetModel;
     private Vector2 RotateAngle = new Vector2();
     [SerializeReference, Range(0f,1f)] float speed = 0.5f;
     [SerializeReference] public GameObject cakeModel;
@@ -16,11 +16,18 @@ public class Keyboard : MonoBehaviour
         playerInput.Enable();
         rotate = playerInput.Player.Rotate;
         rotate.performed += Rotate_performed;
+        resetModel = playerInput.Player.ResetModel;
+        resetModel.performed += ResetModel_performed;
+    }
+
+    private void ResetModel_performed(InputAction.CallbackContext obj)
+    {
+        cakeModel.transform.rotation = Quaternion.identity;
+        Debug.Log("Reset Model Rotation");
     }
 
     private void Rotate_performed(InputAction.CallbackContext context)
     {
-        Debug.Log(context.ReadValue<Vector2>());
         RotateAngle = (context.ReadValue<Vector2>() * speed);
     }
 

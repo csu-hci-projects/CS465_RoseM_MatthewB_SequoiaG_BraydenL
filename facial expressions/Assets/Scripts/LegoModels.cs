@@ -11,7 +11,12 @@ public class LegoModels : MonoBehaviour
     private GameObject currentModel = null;
     private InputAction next;
     private InputAction prev;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    void Start()
+    {
+        currentModel = Instantiate(legos[index], transform.position, transform.rotation, transform);
+        transform.localScale = new Vector3(.05f, .05f, .05f);
+    }
 
     private void Awake()
     {
@@ -28,8 +33,8 @@ public class LegoModels : MonoBehaviour
         Destroy(currentModel);
         index--;
         Debug.Log(Mathf.Abs(index) % legos.Count);
-        currentModel = Instantiate(legos[Mathf.Abs(index) % legos.Count], transform.position, transform.rotation);
-        currentModel.transform.parent = transform;
+        currentModel = Instantiate(legos[Mathf.Abs(index) % legos.Count], transform.position, transform.rotation, transform);
+        transform.localScale = new Vector3(.05f, .05f, .05f);
     }
 
     private void Next_performed(InputAction.CallbackContext obj)
@@ -37,20 +42,14 @@ public class LegoModels : MonoBehaviour
         Destroy(currentModel);
         index++;
         Debug.Log(Mathf.Abs(index) % legos.Count);
-        currentModel = Instantiate(legos[Mathf.Abs(index) % legos.Count], transform.position, transform.rotation);
-        currentModel.transform.parent = transform;
+        currentModel = Instantiate(legos[Mathf.Abs(index) % legos.Count], transform.position, transform.rotation, transform);
+        transform.localScale = new Vector3(.05f, .05f, .05f);
+
     }
 
     private void OnDisable()
     {
         playerInput.Disable();
         Destroy(currentModel);
-    }
-
-
-    void Start()
-    {
-        currentModel = Instantiate(legos[index], transform.position, transform.rotation);
-        currentModel.transform.parent = transform;
     }
 }
