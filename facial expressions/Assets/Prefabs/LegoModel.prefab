@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legos:
+  - {fileID: 919132149155446097, guid: 28367b85913e8e8408a00226e91c0163, type: 3}
   - {fileID: 919132149155446097, guid: e4a236f2768c9e04e838074583e30507, type: 3}
-  - {fileID: 919132149155446097, guid: 58a8f188b70fb5f42834f23bc354a174, type: 3}
-  - {fileID: 919132149155446097, guid: 7e20a92fd129cd844a492620ad706fb5, type: 3}
-  - {fileID: 919132149155446097, guid: b7bd4b89108fb1e4faa918a2162c2c4a, type: 3}
+  - {fileID: 919132149155446097, guid: b826c1bdd77a437428cb362988128af8, type: 3}
+  - {fileID: 919132149155446097, guid: b460fae9cf0917647a10925d835aaaac, type: 3}
   index: 0
