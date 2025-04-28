@@ -8,7 +8,9 @@ public class FaceAndHead : MonoBehaviour
     [SerializeField] public GameObject _CakeModel;
     [SerializeField] public GameObject _Camera;
     [SerializeField] public OVRFaceExpressions.FaceExpression _RotateExpression;
+    [SerializeField] public OVRFaceExpressions.FaceExpression _ResetRotationExpression;
     [SerializeField][Range(0f, 1f)] public float _Weight = 0.3f;
+    [SerializeField][Range(0f, 1f)] public float _ResetWeight = 0.3f;
     [SerializeField][Range(0.1f, 2f)] public float _Speed = 1f;
     public bool _Active = false;
     private Quaternion _Orgin;
@@ -65,6 +67,11 @@ public class FaceAndHead : MonoBehaviour
                     _CakeModel.transform.Rotate(rotate.eulerAngles.x * _Speed, rotate.eulerAngles.y * _Speed, 0, Space.World);
                 }
                 else _Rotating = false;
+
+                if (_FaceTrackingComponent.GetWeight(_ResetRotationExpression) >= _Weight)
+                {
+                    _CakeModel.transform.rotation = Quaternion.identity;
+                }
             }
         }
     }

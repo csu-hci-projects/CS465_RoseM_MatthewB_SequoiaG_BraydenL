@@ -135,6 +135,51 @@ public partial class @KeyboardInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Choose Model 0"",
+                    ""type"": ""Button"",
+                    ""id"": ""b8c73e89-ee97-4239-92f9-d5177857ad8a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Choose Model 1"",
+                    ""type"": ""Button"",
+                    ""id"": ""ebc35acb-7db6-4e2d-9e53-aebc253f5e56"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Choose Model 2"",
+                    ""type"": ""Button"",
+                    ""id"": ""d57651d0-b9cc-4eeb-8c6d-fdcc903bc84f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Choose Model 3"",
+                    ""type"": ""Button"",
+                    ""id"": ""9f5030c1-4711-40dd-8887-a14e4a94d2ca"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Choose Model 4"",
+                    ""type"": ""Button"",
+                    ""id"": ""938f139b-9b11-4ab7-8bd8-ccc14f8b3623"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -236,6 +281,72 @@ public partial class @KeyboardInput: IInputActionCollection2, IDisposable
                     ""action"": ""Reset Model"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19c5bd66-b0d0-4468-9021-36f4f218c4f9"",
+                    ""path"": ""<Keyboard>/rightCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset Model"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f01584d-445b-444a-893d-ac5d73e84172"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Choose Model 0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""242405b5-b38d-4f50-b585-dde448bd9238"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Choose Model 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b85e5302-42a8-4049-955b-b869e57f7c2b"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Choose Model 2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c9fab9e-8bac-4b2c-b9b1-a9c5df47fd39"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Choose Model 3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""220af932-3f44-4002-9d35-c43e0db419e1"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Choose Model 4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -310,6 +421,11 @@ public partial class @KeyboardInput: IInputActionCollection2, IDisposable
         m_Player_NextModel = m_Player.FindAction("Next Model", throwIfNotFound: true);
         m_Player_PrevModel = m_Player.FindAction("Prev Model", throwIfNotFound: true);
         m_Player_ResetModel = m_Player.FindAction("Reset Model", throwIfNotFound: true);
+        m_Player_ChooseModel0 = m_Player.FindAction("Choose Model 0", throwIfNotFound: true);
+        m_Player_ChooseModel1 = m_Player.FindAction("Choose Model 1", throwIfNotFound: true);
+        m_Player_ChooseModel2 = m_Player.FindAction("Choose Model 2", throwIfNotFound: true);
+        m_Player_ChooseModel3 = m_Player.FindAction("Choose Model 3", throwIfNotFound: true);
+        m_Player_ChooseModel4 = m_Player.FindAction("Choose Model 4", throwIfNotFound: true);
     }
 
     ~@KeyboardInput()
@@ -395,6 +511,11 @@ public partial class @KeyboardInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_NextModel;
     private readonly InputAction m_Player_PrevModel;
     private readonly InputAction m_Player_ResetModel;
+    private readonly InputAction m_Player_ChooseModel0;
+    private readonly InputAction m_Player_ChooseModel1;
+    private readonly InputAction m_Player_ChooseModel2;
+    private readonly InputAction m_Player_ChooseModel3;
+    private readonly InputAction m_Player_ChooseModel4;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -426,6 +547,26 @@ public partial class @KeyboardInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/ResetModel".
         /// </summary>
         public InputAction @ResetModel => m_Wrapper.m_Player_ResetModel;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChooseModel0".
+        /// </summary>
+        public InputAction @ChooseModel0 => m_Wrapper.m_Player_ChooseModel0;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChooseModel1".
+        /// </summary>
+        public InputAction @ChooseModel1 => m_Wrapper.m_Player_ChooseModel1;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChooseModel2".
+        /// </summary>
+        public InputAction @ChooseModel2 => m_Wrapper.m_Player_ChooseModel2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChooseModel3".
+        /// </summary>
+        public InputAction @ChooseModel3 => m_Wrapper.m_Player_ChooseModel3;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ChooseModel4".
+        /// </summary>
+        public InputAction @ChooseModel4 => m_Wrapper.m_Player_ChooseModel4;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -467,6 +608,21 @@ public partial class @KeyboardInput: IInputActionCollection2, IDisposable
             @ResetModel.started += instance.OnResetModel;
             @ResetModel.performed += instance.OnResetModel;
             @ResetModel.canceled += instance.OnResetModel;
+            @ChooseModel0.started += instance.OnChooseModel0;
+            @ChooseModel0.performed += instance.OnChooseModel0;
+            @ChooseModel0.canceled += instance.OnChooseModel0;
+            @ChooseModel1.started += instance.OnChooseModel1;
+            @ChooseModel1.performed += instance.OnChooseModel1;
+            @ChooseModel1.canceled += instance.OnChooseModel1;
+            @ChooseModel2.started += instance.OnChooseModel2;
+            @ChooseModel2.performed += instance.OnChooseModel2;
+            @ChooseModel2.canceled += instance.OnChooseModel2;
+            @ChooseModel3.started += instance.OnChooseModel3;
+            @ChooseModel3.performed += instance.OnChooseModel3;
+            @ChooseModel3.canceled += instance.OnChooseModel3;
+            @ChooseModel4.started += instance.OnChooseModel4;
+            @ChooseModel4.performed += instance.OnChooseModel4;
+            @ChooseModel4.canceled += instance.OnChooseModel4;
         }
 
         /// <summary>
@@ -493,6 +649,21 @@ public partial class @KeyboardInput: IInputActionCollection2, IDisposable
             @ResetModel.started -= instance.OnResetModel;
             @ResetModel.performed -= instance.OnResetModel;
             @ResetModel.canceled -= instance.OnResetModel;
+            @ChooseModel0.started -= instance.OnChooseModel0;
+            @ChooseModel0.performed -= instance.OnChooseModel0;
+            @ChooseModel0.canceled -= instance.OnChooseModel0;
+            @ChooseModel1.started -= instance.OnChooseModel1;
+            @ChooseModel1.performed -= instance.OnChooseModel1;
+            @ChooseModel1.canceled -= instance.OnChooseModel1;
+            @ChooseModel2.started -= instance.OnChooseModel2;
+            @ChooseModel2.performed -= instance.OnChooseModel2;
+            @ChooseModel2.canceled -= instance.OnChooseModel2;
+            @ChooseModel3.started -= instance.OnChooseModel3;
+            @ChooseModel3.performed -= instance.OnChooseModel3;
+            @ChooseModel3.canceled -= instance.OnChooseModel3;
+            @ChooseModel4.started -= instance.OnChooseModel4;
+            @ChooseModel4.performed -= instance.OnChooseModel4;
+            @ChooseModel4.canceled -= instance.OnChooseModel4;
         }
 
         /// <summary>
@@ -633,5 +804,40 @@ public partial class @KeyboardInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnResetModel(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Choose Model 0" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChooseModel0(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Choose Model 1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChooseModel1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Choose Model 2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChooseModel2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Choose Model 3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChooseModel3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Choose Model 4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChooseModel4(InputAction.CallbackContext context);
     }
 }

@@ -8,7 +8,7 @@ public class Keyboard : MonoBehaviour
     private InputAction rotate;
     private InputAction resetModel;
     private Vector2 RotateAngle = new Vector2();
-    [SerializeReference, Range(0f,1f)] float speed = 0.5f;
+    [SerializeReference, Range(0f,10f)] float speed = 5f;
     [SerializeReference] public GameObject cakeModel;
     void Awake() 
     {
