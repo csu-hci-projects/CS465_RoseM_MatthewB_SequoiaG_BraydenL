@@ -47,7 +47,7 @@ MonoBehaviour:
   legos:
   - {fileID: 919132149155446097, guid: 015bb1278580a1c4d81de9c6fa13dc91, type: 3}
   - {fileID: 919132149155446097, guid: e4a236f2768c9e04e838074583e30507, type: 3}
-  - {fileID: 919132149155446097, guid: b826c1bdd77a437428cb362988128af8, type: 3}
+  - {fileID: 919132149155446097, guid: 4211ff9ebfb8ebd48be05ab7a382ecf3, type: 3}
   - {fileID: 919132149155446097, guid: b460fae9cf0917647a10925d835aaaac, type: 3}
   - {fileID: 919132149155446097, guid: 811480681b4148e479bb03e150dba715, type: 3}
   index: 0
