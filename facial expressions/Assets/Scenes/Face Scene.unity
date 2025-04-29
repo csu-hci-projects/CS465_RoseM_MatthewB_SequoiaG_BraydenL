@@ -607,8 +607,8 @@ MonoBehaviour:
   _ResetRotationExpression: 23
   _Weight: 0.304
   _ResetWeight: 0.254
-  _Speed: 1
-  _Active: 0
+  _Speed: 0.5
+  _Active: 1
 --- !u!1 &384055414
 GameObject:
   m_ObjectHideFlags: 0

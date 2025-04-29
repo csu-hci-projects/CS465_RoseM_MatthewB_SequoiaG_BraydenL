@@ -11,7 +11,7 @@ public class FaceAndHead : MonoBehaviour
     [SerializeField] public OVRFaceExpressions.FaceExpression _ResetRotationExpression;
     [SerializeField][Range(0f, 1f)] public float _Weight = 0.3f;
     [SerializeField][Range(0f, 1f)] public float _ResetWeight = 0.3f;
-    [SerializeField][Range(0.1f, 2f)] public float _Speed = 1f;
+    [SerializeField][Range(0.1f, 1f)] public float _Speed = 0.5f;
     public bool _Active = false;
     private Quaternion _Orgin;
     private bool _Rotating = false;
@@ -64,7 +64,14 @@ public class FaceAndHead : MonoBehaviour
                     //Debug.Log("Origin:" + _Orgin + "\nCamera:" + _Camera.transform.localEulerAngles + "\nRotate:" + Vector3.ClampMagnitude((_Orgin - (_Camera.transform.localEulerAngles)) * _Speed, _ClampValue));
 
                     Quaternion rotate = _Orgin * Quaternion.Inverse(_Camera.transform.rotation); //Vector3.ClampMagnitude((_Orgin - (_Camera.transform.localEulerAngles)) * _Speed, _ClampValue);
-                    _CakeModel.transform.Rotate(rotate.eulerAngles.x * _Speed, rotate.eulerAngles.y * _Speed, 0, Space.World);
+                    //Debug.Log("Base:" + rotate.eulerAngles);
+                    //Debug.Log("Base & Speed:"+rotate.eulerAngles * _Speed);
+                    //Vector3 target = rotate.eulerAngles * _Speed;
+                    //_CakeModel.transform.Rotate(target.x, target.y, 0, Space.World);
+                   
+                    Quaternion target = Quaternion.Slerp(Quaternion.identity, rotate, _Speed);
+                    Debug.Log(target.eulerAngles);
+                    _CakeModel.transform.rotation = target * _CakeModel.transform.rotation;
                 }
                 else _Rotating = false;
 
