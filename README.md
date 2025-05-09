@@ -3,9 +3,9 @@ Github Repo for CS-465 Facial Expression Project
 
 
 ## Instructions
-Project Uses Unity 6.0.4
+Project Uses **Unity 6.0.4**
 
-Meta Quest Pro required for face tracking.
+**Meta Quest Pro required for face tracking.**
 
 Once set up projcet can be run either though quest link or built directly onto the headset using build and a side loader such as side quest. Make sure to have experemental settings enabled on the meta quest link app as well as face tracking enabled on your quest pro before running.
 
@@ -30,6 +30,12 @@ Once set up projcet can be run either though quest link or built directly onto t
 # Links
 
 ### [Overleaf](https://www.overleaf.com/read/nxmtgnpcxvgj#5e81e7)
+
+### Final Submission Videos
+
+[presentation video](https://youtu.be/S8sy97sHTOw)
+
+[Code Review](https://youtu.be/FVj-jbWsBtY)
 
 ### Checkpoint 2 Videos:
 [Current Standing](https://youtu.be/-mwjoNqyk0w)
